@@ -1,5 +1,7 @@
 {
   "name": "appCorsoMaster",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

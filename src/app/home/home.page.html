@@ -1,7 +1,7 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,52 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">La mia anagrafica</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-item>
+    <ion-input [(ngModel)]="name" label="Nome" placeholder="Nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="surname" label="Cognome" placeholder="Cognome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="bornIn" label="Data di nascita" placeholder="Data di nascita"></ion-input>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-item>
+    <ion-input [(ngModel)]="place" label="Luogo di nascita" placeholder="Luogo di nascita"></ion-input>
+  </ion-item>
+
+
+  <div style="display: flex;justify-content: flex-end;margin-top: 10px;">
+    <ion-button (click)="sendData()">Conferma</ion-button>
   </div>
+
+
+  <div *ngIf="name !== '' && surname !== '' && dataSending">
+    <ion-item lines="inset">
+      <ion-icon name="happy" slot="start"></ion-icon>
+      <ion-label>{{name+ ' '+ surname}}</ion-label>
+    </ion-item>
+  </div>
+
+  <div *ngIf="bornIn !== '' && dataSending">
+    <ion-item lines="inset">
+      <ion-icon name="calendar" slot="start"></ion-icon>
+      <ion-label>{{bornIn}}</ion-label>
+    </ion-item>
+  </div>
+
+  <div *ngIf="place !== '' && dataSending">
+    <ion-item lines="inset">
+      <ion-icon name="earth" slot="start"></ion-icon>
+      <ion-label>{{place}}</ion-label>
+    </ion-item>
+  </div>
+
+  <div *ngIf="dataSending" style="display: flex;justify-content: flex-end;margin-top: 10px;">
+    <ion-button (click)="registerNow()">Registrati ora</ion-button>
+  </div>
+
 </ion-content>

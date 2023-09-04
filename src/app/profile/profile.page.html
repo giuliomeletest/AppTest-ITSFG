@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Profilo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profilo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div style="display: flex; justify-content: center;">
+    <div style="border-radius: 100px; width: 200px; height: 200px; border: solid white; background-color: grey;">
+    </div>
+  </div>
+
+
+  <div *ngIf="name !== '' && surname !== ''">
+    <ion-item lines="inset">
+      <ion-icon name="happy" slot="start"></ion-icon>
+      <ion-label>{{name+ ' '+ surname}}</ion-label>
+    </ion-item>
+  </div>
+
+  <div *ngIf="bornIn !== ''">
+    <ion-item lines="inset">
+      <ion-icon name="calendar" slot="start"></ion-icon>
+      <ion-label>{{bornIn}}</ion-label>
+    </ion-item>
+  </div>
+
+  <div *ngIf="place !== ''">
+    <ion-item lines="inset">
+      <ion-icon name="earth" slot="start"></ion-icon>
+      <ion-label>{{place}}</ion-label>
+    </ion-item>
+  </div>
+
+</ion-content>
