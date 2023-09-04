@@ -22,10 +22,11 @@ export class HomePage {
     if (this.name === '' || this.surname === '' || this.bornIn === '' || this.place === '' || this.sign === '') {
       alert('Attenzione, alcuni dati sono assenti')
     } else {
-      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.name)
-      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.surname)
-      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.bornIn)
-      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.place)
+      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.name);
+      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.surname);
+      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.bornIn);
+      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.place);
+      console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.sign);
       this.dataSending = true;
     }
   }
