@@ -16,12 +16,13 @@ export class CoreService {
     return data;
   }
 
-  public async setData(name: string, surname: string, bornIn: string, place: string) {
+  public async setData(name: string, surname: string, bornIn: string, place: string,sign: string) {
     await this.storage.set('dataProfile', {
       name: name,
       surname: surname,
       bornIn: bornIn,
       place: place,
+      sign: sign,
     });
     await this.getData();
   }

@@ -12,13 +12,14 @@ export class HomePage {
   public surname: string = '';
   public bornIn: string = '';
   public place: string = '';
+  public sign: string = '';
 
   public dataSending: boolean = false;
 
   constructor(private coreService: CoreService, private router: Router) { }
 
   public sendData() {
-    if (this.name === '' || this.surname === '' || this.bornIn === '' || this.place === '') {
+    if (this.name === '' || this.surname === '' || this.bornIn === '' || this.place === '' || this.sign === '') {
       alert('Attenzione, alcuni dati sono assenti')
     } else {
       console.log("🚀 ~ file: home.page.ts:10 ~ HomePage ~ inputExample:", this.name)
@@ -30,7 +31,7 @@ export class HomePage {
   }
 
   public async registerNow() {
-    await this.coreService.setData(this.name,this.surname,this.bornIn,this.place);
+    await this.coreService.setData(this.name,this.surname,this.bornIn,this.place, this.sign);
     this.router.navigate(['profile'])
   }
 
